@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Remove margin/padding from the home container */
+.Home_home__CMw1J {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Remove margin/padding from the hero section */
+.HeroSection_hero__rCqzt {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure no spacing comes from the header */
+header, .header, nav, .navbar {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Remove any potential spacing between header and hero section */
+header + .Home_home__CMw1J,
+.header + .Home_home__CMw1J,
+nav + .Home_home__CMw1J,
+.navbar + .Home_home__CMw1J {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
