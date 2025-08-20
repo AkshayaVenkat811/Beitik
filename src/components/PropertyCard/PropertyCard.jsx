@@ -1,31 +1,40 @@
 // src/components/PropertyCard/PropertyCard.jsx
-import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./PropertyCard.module.css";
 
 const PropertyCard = ({ property }) => {
   return (
-    <div className="bg-white shadow-lg rounded-xl overflow-hidden">
+    <div className={styles.propertyCard}>
       {/* Image */}
-         <img 
-  src={property.image} 
-  alt={property.title} 
-  style={{ 
-    maxWidth: "600px",   // limit width
-    width: "100%",       // make it responsive
-    height: "auto",      // keep aspect ratio
-    objectFit: "cover",  // crop instead of stretching
-    borderRadius: "12px" // optional, rounded corners
-  }} 
-/>
+      <div className={styles.propertyImage}>
+        <img
+          src={property.image || (property.images && property.images[0])}
+          alt={property.title}
+        />
+      </div>
 
-      {/* Content */}
-      <div className="p-4">
-        <h2 className="text-lg font-semibold">{property.title}</h2>
-        <p className="text-gray-600">{property.location}</p>
-        <p className="text-blue-600 font-bold mt-2">${property.price}</p>
+      {/* Info */}
+      <div className={styles.propertyInfo}>
+        <div className={styles.propertyPrice}>{property.price}</div>
+        <div className={styles.propertyTitle}>{property.title}</div>
+        <div className={styles.propertyDetails}>{property.details}</div>
+
+        <div className={styles.propertyRating}>
+          <span className={styles.ratingBadge}>{property.rating} ⭐</span>
+          {property.verified && (
+            <span className={styles.verifiedBadge}>✅ Verified</span>
+          )}
+        </div>
+
+        <Link
+          to={`/property/${property.city}/${property.locality}/${property.id}`}
+          className={styles.viewBtn}
+        >
+          View Details
+        </Link>
       </div>
     </div>
   );
 };
-
 
 export default PropertyCard;

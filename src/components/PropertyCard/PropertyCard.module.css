@@ -1,0 +1,85 @@
+.propertyCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.propertyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.propertyImage img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.propertyInfo {
+  padding: 16px;
+}
+
+.propertyPrice {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #1a5a5a; /* blue */
+  margin-bottom: 8px;
+}
+
+.propertyTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.propertyDetails {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.propertyRating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ratingBadge {
+  background: #fbbf24;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.verifiedBadge {
+  background: #34d399;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.viewBtn {
+  display: inline-block;
+  background:#1a5a5a;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.viewBtn:hover {
+  background: #1a5a5a;
+}
+
+.propertiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './PopularProperties.module.css';
-import properties from "../../data/propertiesData";
+
 
 import { Link } from 'react-router-dom';
 
@@ -13,7 +13,11 @@ const PopularProperties = () => {
       title: 'Luxury Villa in Hydra',
       price: '₹2,50,000 / month',
       details: '4 bedrooms • 3 bathrooms • 250m² • Private pool • Sea view',
-      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      images: [
+      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?...',
+      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?...',
+      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?...'
+    ],
       rating: 4.8,
       verified: true
     },
@@ -53,11 +57,11 @@ const PopularProperties = () => {
           {properties.map(property => (
             <div key={property.id} className={styles.propertyCard}>
               <div className={styles.propertyImage}>
-                <img 
-                  src={property.image} 
-                  alt={property.title}
-                />
-              </div>
+  <img 
+    src={property.image || (property.images && property.images[0])} 
+    alt={property.title}
+  />
+</div>
               <div className={styles.propertyInfo}>
                 <div className={styles.propertyPrice}>{property.price}</div>
                 <div className={styles.propertyTitle}>{property.title}</div>

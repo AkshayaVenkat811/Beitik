@@ -1,3 +1,6 @@
 .buy {
   padding: 2rem;
 }
+.buyPage {
+  padding-top: 100px; /* adjust to your navbar height */
+}

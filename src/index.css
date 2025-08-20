@@ -24,3 +24,6 @@ nav + .Home_home__CMw1J,
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+.page-content {
+  padding-top: 5rem; /* same as header height */
+}
