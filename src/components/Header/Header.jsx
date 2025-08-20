@@ -48,7 +48,14 @@ const Header = () => {
           <div className="auth-buttons">
             {/* Language Switcher */}
             <div className="language-switcher">
-              <button className="btn btn-icon" onClick={toggleLanguageMenu}>🌐</button>
+            
+<button className="btn btn-icon" onClick={toggleLanguageMenu}>
+  <svg className="globe-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <circle cx="12" cy="12" r="10"></circle>
+    <line x1="2" y1="12" x2="22" y2="12"></line>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+  </svg>
+</button>
               {showLanguageMenu && (
                 <div className="language-menu">
                   <div onClick={() => changeLanguage('en')}>English</div>

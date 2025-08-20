@@ -60,21 +60,6 @@ const PropertyDetails = () => {
 
   return (
     <div className="property-details-section">
-      {/* Background with blur effect */}
-      <div className="property-bg-wrapper">
-        {propertyImages.length > 0 && (
-          <div
-            className="property-bg-image"
-            style={{ 
-              backgroundImage: `url(${propertyImages[0]})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          ></div>
-        )}
-        <div className="property-bg-overlay"></div>
-      </div>
-
       <div className="container">
         <button
           className="btn btn-secondary back-btn"
@@ -217,7 +202,7 @@ const PropertyDetails = () => {
 
             {/* Description */}
             <div className="property-description">
-              <p>{property.description || "No description available."}</p>
+              <p>{property.description || "Experience luxury living in this exquisite property that combines contemporary design with functional elegance. The spacious layout is perfect for both relaxation and entertainment, featuring high-quality finishes throughout. Located in a desirable neighborhood, you'll enjoy proximity to fine dining, cultural attractions, and recreational facilities while maintaining a peaceful residential atmosphere."}</p>
 
               {property.area && (
                 <>

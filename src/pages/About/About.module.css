@@ -1,5 +1,15 @@
-/* About.module.css */
+/* src/pages/About/About.module.css */
 .about {
-   scroll-padding-top: 5rem; /* adjust to your navbar height */
-   padding-top: 5rem; /* push content below navbar */
+  scroll-padding-top: 5rem; /* adjust to your navbar height */
+  padding-top: 5rem; /* push content below navbar */
+  background-color:  #f0e9dd; /* Light gray background */
+  min-height: 100vh; /* Ensure it covers full viewport height */
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a5a5a; /* Your brand green color */
+  margin-bottom: 1rem;
+ 
 }

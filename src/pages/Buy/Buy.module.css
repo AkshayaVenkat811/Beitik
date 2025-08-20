@@ -1,6 +1,182 @@
-.buy {
-  padding: 2rem;
-}
+/* src/pages/Buy/Buy.module.css */
 .buyPage {
-  padding-top: 100px; /* adjust to your navbar height */
+  padding-top: 100px;
+  min-height: 100vh;
+  background-color: #f0e9dd;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center; /* Center the header content */
+}
+
+.title {
+  font-size: 2.5rem; /* Slightly larger for emphasis */
+  font-weight: 700;
+  color: #1a5a5a; /* Your brand green color */
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.mobileFilterToggle {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #1a5a5a;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  height: fit-content;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sidebarHeader h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.clearButton {
+  color: #1a5a5a;
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  text-decoration: underline;
+}
+
+.listings {
+  flex: 1;
+}
+
+.propertiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.noResults {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #718096;
+}
+
+.noResults h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+  color: #4a5568;
+}
+
+.closeSidebar {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .buyPage {
+    padding-top: 80px;
+  }
+  
+  .title {
+    font-size: 2rem; /* Slightly smaller on mobile */
+  }
+  
+  .mobileFilterToggle {
+    display: flex;
+  }
+  
+  .content {
+    position: relative;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 350px;
+    height: 100vh;
+    z-index: 50;
+    border-radius: 0;
+    padding: 1.5rem;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+  }
+  
+  .sidebarOpen {
+    left: 0;
+  }
+  
+  .closeSidebar {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #1a5a5a;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+  
+  .propertiesGrid {
+    grid-template-columns: 1fr;
+  }
 }
